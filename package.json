@@ -39,8 +39,9 @@
       "dist/nodes/Targetare/Targetare.node.js"
     ]
   },
-  "dependencies": {
-    "n8n-workflow": "^1.0.0"
+  "dependencies": {},
+  "peerDependencies": {
+    "n8n-workflow": "*"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
