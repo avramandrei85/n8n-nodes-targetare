@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-targetare",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Official community node to connect n8n to the Targetare.ro API",
   "keywords": [
     "n8n-nodes",
