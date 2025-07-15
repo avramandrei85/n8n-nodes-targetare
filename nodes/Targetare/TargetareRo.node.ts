@@ -26,8 +26,7 @@ export class TargetareRo implements INodeType {
               Accept: 'application/json',
               'Content-Type': 'application/json',
             },
-          },
-          
+        },
 
 		properties: [
 			// Resource selector
@@ -95,7 +94,7 @@ export class TargetareRo implements INodeType {
 					},
 					{
 					  name: 'Get Company Emails by CUI',
-					  value: 'getEmailslByTaxId',
+					  value: 'getEmailsByTaxId',
 					  action: 'Get company emails by cui',
 					  description: 'Get company Emails by its CUI',
 					  routing: {
@@ -119,7 +118,7 @@ export class TargetareRo implements INodeType {
 					},
 					{
 					  name: 'Get Company Phones by CUI',
-					  value: 'getPhoneslByTaxId',
+					  value: 'getPhonesByTaxId',
 					  action: 'Get company phones by cui',
 					  description: 'Get company Phones by its CUI',
 					  routing: {
@@ -141,11 +140,11 @@ export class TargetareRo implements INodeType {
 						},
 					  },
 					},
-				  ],
+				],
 				default: 'getByRegistration',
 			},
 
-			// Registration Date (only for "get" operation)
+			// Registration Date (only for "getByRegistration" operation)
 			{
 				displayName: 'Registration Date',
 				description: 'Company registration date (YYYY-MM-DD)',
@@ -166,9 +165,32 @@ export class TargetareRo implements INodeType {
 						},
 					},
 				},
+			},	
+
+			// Page number (only for "getByRegistration" operation)
+			{
+				displayName: 'Page',
+				name: 'page',
+				type: 'number',
+				required: false,
+				default: 1,
+				description: 'Page number.',
+				displayOptions: {
+					show: {
+						resource: ['companies'],
+						operation: ['getByRegistration'],
+					},
+				},
+				routing: {
+					request: {
+						qs: {
+							page: '={{$parameter.page}}',
+						},
+					},
+				},
 			},
 
-			// CUI (only for "getByTaxId" operation)
+			// CUI (only for "by CUI" operations)
 			{
 				displayName: 'CUI',
 				name: 'taxId',
@@ -179,7 +201,14 @@ export class TargetareRo implements INodeType {
 				displayOptions: {
 					show: {
 						resource: ['companies'],
-						operation: ['getByTaxId','getFinancialByTaxId','getPhoneslByTaxId','getEmailslByTaxId','getAdministratorsByTaxId','getWebsitesByTaxId'],
+						operation: [
+							'getByTaxId',
+							'getFinancialByTaxId',
+							'getPhonesByTaxId',
+							'getEmailsByTaxId',
+							'getAdministratorsByTaxId',
+							'getWebsitesByTaxId'
+						],
 					},
 				},
 			},
