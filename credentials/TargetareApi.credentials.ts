@@ -4,9 +4,9 @@ import {
 	INodeProperties,
 } from 'n8n-workflow';
 
-export class TargetareAPIApi implements ICredentialType {
+export class TargetareApi implements ICredentialType {
 
-	name = 'TargetareAPIApi';
+	name = 'TargetareApi';
 	displayName = 'Targetare API';
 	// Uses the link to this tutorial as an example
 	// Replace with your own docs links when building your own nodes

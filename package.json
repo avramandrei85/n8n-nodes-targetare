@@ -33,7 +33,7 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/TargetareAPI/TargetareAPIApi.credentials.js"
+      "dist/credentials/TargetareApi.credentials.js"
     ],
     "nodes": [
       "dist/nodes/Targetare/TargetareRo.node.js"

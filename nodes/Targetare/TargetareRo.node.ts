@@ -16,7 +16,7 @@ export class TargetareRo implements INodeType {
 		outputs: ['main' as NodeConnectionType],
 		credentials: [
 			{
-				name: 'TargetareAPIApi',
+				name: 'TargetareApi',
 				required: true,
 			},
 		],
