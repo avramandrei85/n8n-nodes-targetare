@@ -40,9 +40,6 @@ export class TargetareApi implements ICredentialType {
 			qs: {
 				registration_date: '2020-01-01',
 			},
-			headers: {
-				Authorization: '={{ "Bearer " + $credentials.apiKey }}',
-			},
 		},
 	};
 }
